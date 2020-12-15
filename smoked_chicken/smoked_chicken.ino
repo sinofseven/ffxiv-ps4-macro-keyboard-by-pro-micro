@@ -19,8 +19,7 @@ unsigned long timeMeasureIntervalBase;
 #define STATE_RANGE 3 // 0: unpress, 1: pressed, 2: wait
 uint8_t state;
 
-// unsigned long timeBreakerMax = 840000; // 1000 * 60 * 14
-unsigned long timeBreakerMax = 1000 * 3;
+unsigned long timeBreakerMax = 840000; // 1000 * 60 * 14
 
 void execMacro() {
   uint8_t keyCode = keys[keyIndex];
