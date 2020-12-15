@@ -5,8 +5,8 @@
 uint8_t keys[KEYS_NUMBER] = {KEY_INSERT, KEY_INSERT, '1', '1'};
 uint32_t nextIntervals[KEYS_NUMBER] = {500, 500, 35000, 39000};
 
-uint8_t pinSwitch = 2;
-uint8_t pinLED = 15;
+uint8_t pinSwitch = 15;
+uint8_t pinLED = 4;
 
 uint8_t ledPrevious = LOW;
 uint8_t ledCurrent = LOW;
