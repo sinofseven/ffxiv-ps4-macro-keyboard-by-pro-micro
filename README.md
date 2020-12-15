@@ -26,7 +26,7 @@ Arduino IDEではBoardとして`Arduino Micro`を選択してください。
 [【FF14】5.3で追加されたクラフターの新式装備の禁断例！エースセチック装備 |](https://portfolio-navigation.com/%E3%80%90ff14%E3%80%915-3%E3%81%A7%E8%BF%BD%E5%8A%A0%E3%81%95%E3%82%8C%E3%81%9F%E3%82%AF%E3%83%A9%E3%83%95%E3%82%BF%E3%83%BC%E3%81%AE%E6%96%B0%E5%BC%8F%E8%A3%85%E5%82%99%E3%81%AE%E7%A6%81%E6%96%AD)
 
 ## ツール群
-### スモークチキン ([smoked_chicken](smoked_chiken/smoked_chiken.ino))
+### スモークチキン ([smoked_chicken](smoked_chicken/smoked_chicken.ino))
 スモークチキンHQを目指すマクロを自動で実行していきます。  
 マクロは[こちら](https://ffxivteamcraft.com/simulator/31901/34569/aXJw2T3AydwYvlm5r6Uw?stats=2822/2783/569/80/1&food=30482,1&med=27959,1)
 
