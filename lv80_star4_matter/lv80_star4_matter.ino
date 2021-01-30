@@ -70,6 +70,8 @@ void doOn() {
 
 void toggleOff() {
   stateCurrent = false;
+  if (stateCurrent == statePrevious) return;
+  Keyboard.releaseAll();
 }
 
 void doOff() {

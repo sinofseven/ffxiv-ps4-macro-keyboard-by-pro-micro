@@ -1,9 +1,9 @@
 #include <Keyboard.h>
 
-#define BREAKER_MAX_TIME 3540000
-#define KEY_NUMBERS 5
-uint8_t listKeyCodes[KEY_NUMBERS] = {KEY_INSERT, KEY_INSERT, KEY_INSERT, '1', '2'};
-unsigned long listKeyIntervals[KEY_NUMBERS] = {500, 500, 1000, 35000, 35000};
+#define COUNT_LIMIT 35
+#define KEY_NUMBERS 4
+uint8_t listKeyCodes[KEY_NUMBERS] = {KEY_INSERT, KEY_INSERT, KEY_INSERT, '1'};
+unsigned long listKeyIntervals[KEY_NUMBERS] = {500, 500, 1000, 30000};
 
 
 #define MY_PIN_SWITCH 15
@@ -12,10 +12,9 @@ unsigned long listKeyIntervals[KEY_NUMBERS] = {500, 500, 1000, 35000, 35000};
 uint8_t offValue;
 bool stateCurrent = false;
 bool statePrevious = false;
-unsigned long breakerTimeBase;
-
 uint8_t keyIndex = 0;
 uint8_t keyState = 0;
+uint8_t count = 0;
 unsigned long keyIntervalBase;
 
 void execMacro() {
@@ -39,23 +38,25 @@ void execMacro() {
     case 2:
       if (now - keyIntervalBase >= interval) {
         keyState = 0;
-        keyIndex = (keyIndex + 1) % KEY_NUMBERS; 
+        keyIndex = (keyIndex + 1) % KEY_NUMBERS;
+        if (keyIndex == 0) {
+          count += 1;
+        }
       }
       break;
   }
 }
 
 bool checkBreaker() {
-  unsigned long now = millis();
-  return now - breakerTimeBase >= BREAKER_MAX_TIME;
+  return count >= COUNT_LIMIT;
 }
 
 void toggleOn() {
   stateCurrent = true;
   if (stateCurrent == statePrevious) return;
-  breakerTimeBase = millis();
   keyState = 0;
   keyIndex = 0;
+  count = 0;
 }
 
 void doOn() {

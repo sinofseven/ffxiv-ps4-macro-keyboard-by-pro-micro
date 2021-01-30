@@ -1,0 +1,64 @@
+macros:
+  - name: chili_crab_30m
+    kind: TimeLimit
+    limit: 1740000
+    steps:
+      - key: KEY_INSERT
+        interval: 500
+      - key: KEY_INSERT
+        interval: 500
+      - key: KEY_INSERT
+        interval: 1000
+      - key: "'1'"
+        interval: 35000
+      - key: "'2'"
+        interval: 35000
+  - name: coffee_cookie_30m
+    kind: TimeLimit
+    limit: 1740000
+    steps:
+      - key: KEY_INSERT
+        interval: 500
+      - key: KEY_INSERT
+        interval: 500
+      - key: KEY_INSERT
+        interval: 1000
+      - key: "'1'"
+        interval: 23000
+  - name: coffee_cookie_1h
+    kind: TimeLimit
+    limit: 3540000
+    steps:
+      - key: KEY_INSERT
+        interval: 500
+      - key: KEY_INSERT
+        interval: 500
+      - key: KEY_INSERT
+        interval: 1000
+      - key: "'1'"
+        interval: 23000
+  - name: rarefied_syrup_35p
+    kind: CountLimit
+    limit: 35
+    steps:
+      - key: KEY_INSERT
+        interval: 500
+      - key: KEY_INSERT
+        interval: 500
+      - key: KEY_INSERT
+        interval: 1000
+      - key: "'1'"
+        interval: 23000
+  - name: lv80_skybuilders_item
+    kind: CountLimit
+    limit: 35
+    steps:
+      - key: KEY_INSERT
+        interval: 500
+      - key: KEY_INSERT
+        interval: 500
+      - key: KEY_INSERT
+        interval: 1000
+      - key: "'1'"
+        interval: 30000
+

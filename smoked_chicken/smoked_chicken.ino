@@ -1,6 +1,6 @@
 #include <Keyboard.h>
 
-#define BREAKER_MAX_TIME 900000
+#define BREAKER_MAX_TIME 840000
 #define KEY_NUMBERS 5
 uint8_t listKeyCodes[KEY_NUMBERS] = {KEY_INSERT, KEY_INSERT, KEY_INSERT, '1', '2'};
 unsigned long listKeyIntervals[KEY_NUMBERS] = {500, 500, 1000, 35000, 39000};
@@ -70,6 +70,8 @@ void doOn() {
 
 void toggleOff() {
   stateCurrent = false;
+  if (stateCurrent == statePrevious) return;
+  Keyboard.releaseAll();
 }
 
 void doOff() {
